@@ -1,0 +1,45 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-12">
+                <div class="w-frame">
+                    <div class="row">
+                        <div class="col-lg-10 offset-lg-1 col-12">
+                            <h1 class="text-center">visionauts</h1>
+                            <form action="{{ path("fos_user_security_check") }}" id="email-form" name="email-form" data-name="EmailForm" method="post">
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+                                <div class="form-group">
+                                    <label for="username">Login</label>
+                                    <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" required="required" maxlength="256" placeholder="Username or Email" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input class="form-control" type="password" id="password" name="_password" required="required" maxlength="256" placeholder="Password">
+
+                                  {% if error %}
+                                    <div class="alert alert-danger mt-3" role="alert">
+                                        {{ error.messageKey|trans(error.messageData, 'security') }}
+                                    </div>
+                                  {% endif %}
+                                </div>
+                                <div class="text-center">
+                                    <button class="btn btn-primary" type="submit" id="_submit" name="_submit" data-wait="Please wait...">Login →</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock fos_user_content %}
