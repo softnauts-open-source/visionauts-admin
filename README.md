@@ -16,49 +16,49 @@ The user, when moving around, receives information about his location based on b
 
 ##### 2. Choose the place where you want to put application on your server and execute this command to install the project:
     
-    ```
-    $ git clone https://PASTE_HERE_LINK_TO_REPOSITORY.html visionauts
-    ```
+```
+$ git clone https://PASTE_HERE_LINK_TO_REPOSITORY.html visionauts
+```
+
+```
+$ cd visionauts/
+```
+
+* Create doctrine database (if you don't want to create via SSH, first point):
     
-    ```
-    $ cd visionauts/
-    ```
-    
-    * Create doctrine database (if you don't want to create via SSH, first point):
-        
-        ```
-        $ php bin/console doctrine:database:create
-        ```     
+```
+$ php bin/console doctrine:database:create
+```     
   
 ##### 3. During this command please enter the database and other parameters required to install:
     
-    ```
-    $ composer install
-    ```
+```
+$ composer install
+```
     
 ##### 4. Create doctrine schema:
         
-    ```
-    $ php bin/console doctrine:schema:create
-    ```
+```
+$ php bin/console doctrine:schema:create
+```
     
 ##### 5. Install assets (CSS, JS, Images, Text Editor etc.): 
     
-    ```
-    $ php bin/console assets:install
-    ```
+```
+$ php bin/console assets:install
+```
 
 ##### 6. Cache clear if you have some problems with permissions:
     
-    ```
-    $ php bin/console cache:clear
-    ```
+```
+$ php bin/console cache:clear
+```
     
 ##### 7. Create admin user, provide username, email and password:
     
-    ```
-    $ php bin/console fos:user:create
-    ```
+```
+$ php bin/console fos:user:create
+```
     
 Notes
 --------------
